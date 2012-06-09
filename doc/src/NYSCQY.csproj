@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>F4439095-F340-4408-936A-8E762223628C</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>WinExe</OutputType>
+    <AssemblyName>NYSCQY</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System" />
+    <Reference Include="DevExpress.XtraGrid.v10.2" />
+    <Reference Include="DevExpress.XtraEditors.v10.2" />
+    <Reference Include="DevExpress.XtraLayout.v10.2" />
+    <Reference Include="DevExpress.Data.v10.2" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Data" />
+    <Reference Include="DevExpress.XtraNavBar.v10.2" />
+    <Reference Include="DevExpress.Utils.v10.2" />
+    <Reference Include="System.Management" />
+    <Reference Include="SharpZipLib" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="NYSCQY.Properties\Resources.cs" />
+    <Compile Include="NYSCQY.Properties\Settings.cs" />
+    <Compile Include="NYSCQY.YXCF\frmDX.cs" />
+    <Compile Include="NYSCQY.YXCF\frmHJ.cs" />
+    <Compile Include="NYSCQY.YXCF\frmJGS.cs" />
+    <Compile Include="NYSCQY.YXCF\frmJXYDetail.cs" />
+    <Compile Include="NYSCQY.YXCF\frmLHXZ.cs" />
+    <Compile Include="NYSCQY.YXCF\frmZYTD.cs" />
+    <Compile Include="NYSCQY\clsCommon.cs" />
+    <Compile Include="NYSCQY\clsCompression.cs" />
+    <Compile Include="NYSCQY\clsMe.cs" />
+    <Compile Include="NYSCQY\clsStr.cs" />
+    <Compile Include="NYSCQY\DxperienceXtraEditorsLocalizationCHS.cs" />
+    <Compile Include="NYSCQY\DxperienceXtraGridLocalizationCHS.cs" />
+    <Compile Include="NYSCQY\DxperienceXtraLayoutLocalizationCHS.cs" />
+    <Compile Include="NYSCQY\DxperienceXtraPrintingLocalizationCHS.cs" />
+    <Compile Include="NYSCQY\frmBQ.cs" />
+    <Compile Include="NYSCQY\frmDW.cs" />
+    <Compile Include="NYSCQY\frmFilter.cs" />
+    <Compile Include="NYSCQY\frmFZDX2ZW.cs" />
+    <Compile Include="NYSCQY\frmGroup.cs" />
+    <Compile Include="NYSCQY\frmHao.cs" />
+    <Compile Include="NYSCQY\frmHJDX.cs" />
+    <Compile Include="NYSCQY\frmHLSYZZ.cs" />
+    <Compile Include="NYSCQY\frmInit.cs" />
+    <Compile Include="NYSCQY\frmJXY.cs" />
+    <Compile Include="NYSCQY\frmLS2ZS.cs" />
+    <Compile Include="NYSCQY\frmNewDJMC.cs" />
+    <Compile Include="NYSCQY\frmNY.cs" />
+    <Compile Include="NYSCQY\frmNY2QY.cs" />
+    <Compile Include="NYSCQY\frmNYDetail.cs" />
+    <Compile Include="NYSCQY\frmNYDHJ.cs" />
+    <Compile Include="NYSCQY\frmNYLB2YXCF.cs" />
+    <Compile Include="NYSCQY\frmNYList.cs" />
+    <Compile Include="NYSCQY\frmNYUnused.cs" />
+    <Compile Include="NYSCQY\frmNYUsed.cs" />
+    <Compile Include="NYSCQY\frmQY.cs" />
+    <Compile Include="NYSCQY\frmQY2NY.cs" />
+    <Compile Include="NYSCQY\frmQYDetail.cs" />
+    <Compile Include="NYSCQY\frmSLCP.cs" />
+    <Compile Include="NYSCQY\frmSort.cs" />
+    <Compile Include="NYSCQY\frmSYDW.cs" />
+    <Compile Include="NYSCQY\frmTJSY.cs" />
+    <Compile Include="NYSCQY\frmTJSYSPXX.cs" />
+    <Compile Include="NYSCQY\frmView.cs" />
+    <Compile Include="NYSCQY\frmYXCF.cs" />
+    <Compile Include="NYSCQY\frmYXCF2JX.cs" />
+    <Compile Include="NYSCQY\frmYXCF2ZWFZDX.cs" />
+    <Compile Include="NYSCQY\frmYXCFDetail.cs" />
+    <Compile Include="NYSCQY\frmZD2JJ.cs" />
+    <Compile Include="NYSCQY\frmZW2FZDX.cs" />
+    <Compile Include="NYSCQY\frmZWFZDX2NY.cs" />
+    <Compile Include="NYSCQY\MDIParent.cs" />
+    <Compile Include="NYSCQY\Program.cs" />
+    <Compile Include="NYSCQY\UserManu.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="NYSCQY.Properties\Resources.resources" />
+    <EmbeddedResource Include="NYSCQY.YXCF\frmDX.resources" />
+    <EmbeddedResource Include="NYSCQY.YXCF\frmHJ.resources" />
+    <EmbeddedResource Include="NYSCQY.YXCF\frmJGS.resources" />
+    <EmbeddedResource Include="NYSCQY.YXCF\frmJXYDetail.resources" />
+    <EmbeddedResource Include="NYSCQY.YXCF\frmLHXZ.resources" />
+    <EmbeddedResource Include="NYSCQY.YXCF\frmZYTD.resources" />
+    <EmbeddedResource Include="NYSCQY\exe.licenses" />
+    <EmbeddedResource Include="NYSCQY\frmBQ.resources" />
+    <EmbeddedResource Include="NYSCQY\frmDW.resources" />
+    <EmbeddedResource Include="NYSCQY\frmFilter.resources" />
+    <EmbeddedResource Include="NYSCQY\frmFZDX2ZW.resources" />
+    <EmbeddedResource Include="NYSCQY\frmGroup.resources" />
+    <EmbeddedResource Include="NYSCQY\frmHao.resources" />
+    <EmbeddedResource Include="NYSCQY\frmHJDX.resources" />
+    <EmbeddedResource Include="NYSCQY\frmHLSYZZ.resources" />
+    <EmbeddedResource Include="NYSCQY\frmInit.resources" />
+    <EmbeddedResource Include="NYSCQY\frmJXY.resources" />
+    <EmbeddedResource Include="NYSCQY\frmLS2ZS.resources" />
+    <EmbeddedResource Include="NYSCQY\frmNewDJMC.resources" />
+    <EmbeddedResource Include="NYSCQY\frmNY.resources" />
+    <EmbeddedResource Include="NYSCQY\frmNY2QY.resources" />
+    <EmbeddedResource Include="NYSCQY\frmNYDetail.resources" />
+    <EmbeddedResource Include="NYSCQY\frmNYDHJ.resources" />
+    <EmbeddedResource Include="NYSCQY\frmNYLB2YXCF.resources" />
+    <EmbeddedResource Include="NYSCQY\frmNYList.resources" />
+    <EmbeddedResource Include="NYSCQY\frmNYUnused.resources" />
+    <EmbeddedResource Include="NYSCQY\frmNYUsed.resources" />
+    <EmbeddedResource Include="NYSCQY\frmQY.resources" />
+    <EmbeddedResource Include="NYSCQY\frmQY2NY.resources" />
+    <EmbeddedResource Include="NYSCQY\frmQYDetail.resources" />
+    <EmbeddedResource Include="NYSCQY\frmSLCP.resources" />
+    <EmbeddedResource Include="NYSCQY\frmSort.resources" />
+    <EmbeddedResource Include="NYSCQY\frmSYDW.resources" />
+    <EmbeddedResource Include="NYSCQY\frmTJSY.resources" />
+    <EmbeddedResource Include="NYSCQY\frmTJSYSPXX.resources" />
+    <EmbeddedResource Include="NYSCQY\frmView.resources" />
+    <EmbeddedResource Include="NYSCQY\frmYXCF.resources" />
+    <EmbeddedResource Include="NYSCQY\frmYXCF2JX.resources" />
+    <EmbeddedResource Include="NYSCQY\frmYXCF2ZWFZDX.resources" />
+    <EmbeddedResource Include="NYSCQY\frmYXCFDetail.resources" />
+    <EmbeddedResource Include="NYSCQY\frmZD2JJ.resources" />
+    <EmbeddedResource Include="NYSCQY\frmZW2FZDX.resources" />
+    <EmbeddedResource Include="NYSCQY\frmZWFZDX2NY.resources" />
+    <EmbeddedResource Include="NYSCQY\MDIParent.resources" />
+    <EmbeddedResource Include="NYSCQY\UserManu.resources" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

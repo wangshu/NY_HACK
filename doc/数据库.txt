@@ -1,0 +1,73 @@
+ 密码： nv86^E39%0_~!f3$^@#
+文件输出扩展名 zip
+
+public static void DecryptFile(string inFile, string outFile, string password)
+{
+	using (FileStream fileStream = File.OpenRead(inFile))
+	{
+		using (FileStream fileStream2 = File.OpenWrite(outFile))
+		{
+			int num = (int)fileStream.Length;
+			byte[] array = new byte[131072];
+			int num2 = 0;
+			byte[] array2 = new byte[16];
+			fileStream.Read(array2, 0, 16);
+			byte[] array3 = new byte[16];
+			fileStream.Read(array3, 0, 16);
+			SymmetricAlgorithm symmetricAlgorithm = clsMe.CreateRijndael(password, array3);
+			symmetricAlgorithm.IV = array2;
+			int num3 = 32;
+			long num4 = -1L;
+			HashAlgorithm hashAlgorithm = SHA256.Create();
+			using (CryptoStream cryptoStream = new CryptoStream(fileStream, symmetricAlgorithm.CreateDecryptor(), CryptoStreamMode.Read))
+			{
+				using (CryptoStream cryptoStream2 = new CryptoStream(Stream.Null, hashAlgorithm, CryptoStreamMode.Write))
+				{
+					BinaryReader binaryReader = new BinaryReader(cryptoStream);
+					num4 = binaryReader.ReadInt64();
+					ulong num5 = binaryReader.ReadUInt64();
+					if (18158797384510146255uL != num5)
+					{
+						throw new clsMe.clsMeException("文件被破坏");
+					}
+					long num6 = num4 / 131072L;
+					long num7 = num4 % 131072L;
+					int num8 = 0;
+					int num9;
+					while ((long)num8 < num6)
+					{
+						num9 = cryptoStream.Read(array, 0, array.Length);
+						fileStream2.Write(array, 0, num9);
+						cryptoStream2.Write(array, 0, num9);
+						num3 += num9;
+						num2 += num9;
+						num8++;
+					}
+					if (num7 > 0L)
+					{
+						num9 = cryptoStream.Read(array, 0, (int)num7);
+						fileStream2.Write(array, 0, num9);
+						cryptoStream2.Write(array, 0, num9);
+						num3 += num9;
+						num2 += num9;
+					}
+					cryptoStream2.Flush();
+					cryptoStream2.Close();
+					fileStream2.Flush();
+					fileStream2.Close();
+					byte[] hash = hashAlgorithm.Hash;
+					byte[] array4 = new byte[hashAlgorithm.HashSize / 8];
+					num9 = cryptoStream.Read(array4, 0, array4.Length);
+					if (array4.Length != num9 || !clsMe.CheckByteArrays(array4, hash))
+					{
+						throw new clsMe.clsMeException("文件被破坏");
+					}
+				}
+			}
+			if ((long)num2 != num4)
+			{
+				throw new clsMe.clsMeException("文件大小不匹配");
+			}
+		}
+	}
+}
